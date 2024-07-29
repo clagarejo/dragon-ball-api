@@ -1,0 +1,10 @@
+.card-style {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dragon-title {
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 10px 0px;
+}
