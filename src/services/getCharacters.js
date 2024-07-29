@@ -1,5 +1,5 @@
-export const getCharacters = () => {
-    const baseUrl = 'https://dragonball-api.com/api/characters?limit=12';
+export const getCharacters = (page) => {
+    const baseUrl = `https://dragonball-api.com/api/characters?page=${page}&limit=6`;
 
     return fetch(baseUrl)
         .then(response => {

@@ -1,11 +1,23 @@
-import './styles.css'
+import { useState } from 'react';
+import './styles.css';
 
 export const CardPerson = ({ name, race, gender, image, ki, maxKi, affiliation }) => {
+    const [loaded, setLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        setLoaded(true);
+    };
+
     return (
         <section className="card">
             <article>
                 <div className="card-image">
-                    <img src={image} alt={name} />
+                    <img 
+                        src={image} 
+                        alt={name} 
+                        onLoad={handleImageLoad} 
+                        className={loaded ? 'loaded' : ''} 
+                    />
                 </div>
 
                 <div className="card-content">
@@ -17,5 +29,5 @@ export const CardPerson = ({ name, race, gender, image, ki, maxKi, affiliation }
                 </div>
             </article>
         </section>
-    )
-}
+    );
+};
